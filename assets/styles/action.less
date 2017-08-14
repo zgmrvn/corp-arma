@@ -1,0 +1,39 @@
+.Action {
+	background-color: @theme-main-color;
+	padding: unit((@gutter-width * @block-padding-multiplier), px) 0 unit(@gutter-width, px) 0;
+}
+	.Action-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: unit(@gutter-width, px);
+		grid-template-rows: auto auto auto;
+		grid-template-areas:
+			"participate-title about-title"
+			"participate about"
+			"participate-link about-link";
+	}
+		.Action-title {
+			display: flex;
+			height: 64px;
+			line-height: 64px;
+			text-align: center;
+			justify-content: center;
+		}
+			.Action-title img {
+				margin-right: unit((@gutter-width / 4), px);
+			}
+		.Action-text {
+			color: tint(@theme-main-color, 90%);
+		}
+		.Action-participate {
+			grid-area: participate;
+		}
+		.Action-about {
+			grid-area: about;
+		}
+		.Action-text-link--participate {
+			grid-area: participate-link;
+		}
+		.Action-text-link--about {
+			grid-area: about-link;
+		}

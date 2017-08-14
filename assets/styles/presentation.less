@@ -1,0 +1,28 @@
+.Presentation {
+	background-color: darken(#fff, 5%);
+	background-color: #fff;
+}
+	.Presentation-grid {
+		display: grid;
+		grid-template-columns: 7fr 5fr;
+		grid-gap: unit(@gutter-width, px);
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"title visual"
+			"text visual";
+	}
+		.Presentation-title {
+			grid-area: title;
+		}
+		.Presentation-text {
+			grid-area: text;
+		}
+		.Presentation-visual {
+			grid-area: visual;
+			position: relative;
+		}
+			.Presentation-visual-soldiers {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
