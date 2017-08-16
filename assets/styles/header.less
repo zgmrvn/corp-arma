@@ -12,52 +12,36 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 	}
-	/*
-	.Header-grid {
-		left: 50%;
-		top: 50vh;
-		display: grid;
-		grid-template-columns: 7fr 7fr;
-		grid-gap: unit(@gutter-width, px);
-		grid-template-rows: auto auto auto;
-		grid-template-areas:
-			"logo"
-			"title"
-			"video";
-		position: absolute;
-		transform: translate(-50%, -50%);
-	}
-	*/
 		.Header-logo {
-			grid-area: logo;
 			display: block;
 			width: unit(@w3, px);
 			height: unit(@w3, px);
-			margin: -9px auto unit(@gutter-width, px) auto;
+			margin: -9px auto unit(@gutter, px) auto;
 		}
 		.Header-title {
-			grid-area: title;
 			text-align: center;
 			font-size: 440%;
 			line-height: 40%;
 			font-weight: normal;
-			margin-bottom: unit(@gutter-width, px);
-			text-shadow: #fff 0 0 unit((@gutter-width * 2), px);
+			margin-bottom: unit(@gutter, px);
+			text-shadow: #fff 0 0 unit((@gutter * 2), px);
 		}
 		.Header-title--description {
 			font-size: 32%;
 			font-weight: bold;
 		}
 		.Header-video {
-			grid-area: video;
-			box-shadow: #fff 0 0 unit((@gutter-width * 2), px);
+			box-shadow: #fff 0 0 unit((@gutter * 2), px);
 		}
-		/*
-		.Header-visual {
-			grid-area: visual;
-			position: relative;
-		}
-			.Header-visual-soldiers {
-				position: absolute;
-			}
-			*/
+
+@media screen and (max-height: 720px), screen and (max-width: 632px) {
+	.Header-video {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 632px) {
+	.Header-inner {
+		width: 100% !important;
+	}
+}

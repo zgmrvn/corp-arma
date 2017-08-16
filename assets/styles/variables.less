@@ -1,21 +1,29 @@
 @theme-main-color: #20283f;
-@theme-second-color: #fd765b;
 
-@colomn-width: 42;
-@gutter-width: 40;
+@column: 42;
+@gutter: 40;
 
-@w1: @colomn-width;
-@w2: (@colomn-width * 2 + @gutter-width * 1);
-@w3: (@colomn-width * 3 + @gutter-width * 2);
-@w4: (@colomn-width * 4 + @gutter-width * 3);
-@w5: (@colomn-width * 5 + @gutter-width * 4);
-@w6: (@colomn-width * 6 + @gutter-width * 5);
-@w7: (@colomn-width * 7 + @gutter-width * 6);
-@w8: (@colomn-width * 8 + @gutter-width * 7);
-@w10: (@colomn-width * 10 + @gutter-width * 9);
-@w12: (@colomn-width * 12 + @gutter-width * 11);
+@w1: @column;
+@w2: (@column * 2 + @gutter * 1);
+@w3: (@column * 3 + @gutter * 2);
+@w4: (@column * 4 + @gutter * 3);
+@w5: (@column * 5 + @gutter * 4);
+@w6: (@column * 6 + @gutter * 5);
+@w7: (@column * 7 + @gutter * 6);
+@w8: (@column * 8 + @gutter * 7);
+@w10: (@column * 10 + @gutter * 9);
+@w12: (@column * 12 + @gutter * 11);
+
+@column-r1: 28;
+
+@w3-r1: (@column-r1 * 3 + @gutter * 2);
+@w4-r1: (@column-r1 * 4 + @gutter * 3);
+@w5-r1: (@column-r1 * 5 + @gutter * 4);
+@w6-r1: (@column-r1 * 6 + @gutter * 5);
+@w12-r1: (@column-r1 * 12 + @gutter * 11);
 
 @block-padding-multiplier: 5;
+@block-padding-multiplier-r2: 3;
 @border-radius: 4;
 
-@responsive: unit((@colomn-width * 8 + @gutter-width * 9), px);
+@responsive: unit((@column * 8 + @gutter * 9), px);

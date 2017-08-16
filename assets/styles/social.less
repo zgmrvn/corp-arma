@@ -2,7 +2,7 @@
 
 .Social {
 	background-color: @theme-main-color;
-	padding: unit(@gutter-width, px) 0 unit((@gutter-width * @block-padding-multiplier), px) 0;
+	padding: unit(@gutter, px) 0 unit((@gutter * @block-padding-multiplier), px) 0;
 }
 	.Social-flex {
 		display: flex;
@@ -12,7 +12,7 @@
 	}
 		.Social-flex-item {
 			display: block;
-			height: unit((@gutter-width * 6), px);
+			height: unit(@w3, px);
 			background-color: tint(@theme-main-color, 5%);
 			text-decoration: none;
 			text-align: center;
@@ -40,11 +40,38 @@
 					transform: translate(-50%, -50%);
 				}
 			.Social-flex-item-text {
-				margin-top: -6px;
 				color: #fff;
-				padding: unit((@gutter-width / 2), px) unit((@gutter-width / 2), px);
+				padding: unit((@gutter), px) unit((@gutter / 2), px);
 				text-decoration: none;
-				font-size: 80%;
-				line-height: 160%;
-				text-align: left;
+				line-height: 80%;
 			}
+
+@media screen and (max-width: 872px) {
+	.Social {
+		padding-top: unit((@gutter * 2), px);
+		padding-bottom: unit((@gutter * @block-padding-multiplier-r2), px);
+	}
+	.Social-flex {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: unit(@gutter, px);
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"social-teamspeak social-youtube"
+			"social-steam social-units";
+	}
+	.Social-flex-item {
+		width: 100% !important;
+	}
+}
+@media screen and (max-width: 550px) {
+	.Social-flex {
+		display: block;
+	}
+	.Social-flex > li {
+		margin-bottom: unit(@gutter, px);
+	}
+	.Social-flex > li:last-child {
+		margin-bottom: 0;
+	}
+}

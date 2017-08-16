@@ -52,7 +52,6 @@ hr {
 .Abstract--content {
   margin-right: auto;
   margin-left: auto;
-  width: 944px;
 }
 .Abstract-title {
   font-size: 260%;
@@ -77,7 +76,7 @@ hr {
 .Abstract-button {
   display: block;
   text-align: center;
-  margin: 0 20px;
+  margin: 0 auto;
   height: 60px;
   line-height: 60px;
   font-size: 110%;
@@ -95,64 +94,53 @@ hr {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.25) 0 6px 24px;
 }
-.Abstract-button--centered {
-  margin: 0 auto;
+@media screen and (max-width: 1040px) {
+  .w3 {
+    width: 164px !important;
+  }
+  .w4 {
+    width: 232px !important;
+  }
+  .w5 {
+    width: 300px !important;
+  }
+  .w6 {
+    width: 368px !important;
+  }
+  .w12 {
+    width: 776px !important;
+  }
 }
-/*
-@media screen and (max-width: 1360px) {
-	.w4 {
-		width: 33.33%;
-	}
+@media screen and (max-width: 872px) {
+  .w4 {
+    width: 452px !important;
+  }
+  .w6 {
+    width: 100% !important;
+  }
+  .w12 {
+    width: 100% !important;
+  }
+  .Abstract--content {
+    padding: 0 40px;
+  }
+  .Abstract--padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
-
-@media screen and (max-width: 1024px) {
-	.w4 {
-		width: 50%;
-	}
-}
-*/
-@font-face {
-  font-family: 'icomoon';
-  src: url('../fonts/icomoon.eot?yl2l8');
-  src: url('../fonts/icomoon.eot?yl2l8#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?yl2l8') format('truetype'), url('../fonts/icomoon.woff?yl2l8') format('woff'), url('../fonts/icomoon.svg?yl2l8#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-pencil:before {
-  content: "\e906";
-}
-.icon-headphones:before {
-  content: "\e910";
-}
-.icon-youtube:before {
-  content: "\ea9d";
-}
-.icon-steam:before {
-  content: "\eaac";
-}
-.icon-users:before {
-  content: "\e972";
+@media screen and (max-width: 550px) {
+  .Abstract-button {
+    width: 100% !important;
+  }
 }
 .Header {
   height: 100vh;
   background-color: #fff;
   position: relative;
-  background: #f5f5f5;
-  background: #f2f2f2 url(../../medias/background-header.jpg) 50% 50% no-repeat;
+  background-image: url(../../medias/background-header.jpg);
+  background-size: cover;
+  background-position: center;
 }
 .Header-inner {
   position: absolute;
@@ -160,31 +148,13 @@ hr {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/*
-	.Header-grid {
-		left: 50%;
-		top: 50vh;
-		display: grid;
-		grid-template-columns: 7fr 7fr;
-		grid-gap: unit(@gutter-width, px);
-		grid-template-rows: auto auto auto;
-		grid-template-areas:
-			"logo"
-			"title"
-			"video";
-		position: absolute;
-		transform: translate(-50%, -50%);
-	}
-	*/
 .Header-logo {
-  grid-area: logo;
   display: block;
   width: 206px;
   height: 206px;
   margin: -9px auto 40px auto;
 }
 .Header-title {
-  grid-area: title;
   text-align: center;
   font-size: 440%;
   line-height: 40%;
@@ -197,18 +167,18 @@ hr {
   font-weight: bold;
 }
 .Header-video {
-  grid-area: video;
   box-shadow: #fff 0 0 80px;
 }
-/*
-		.Header-visual {
-			grid-area: visual;
-			position: relative;
-		}
-			.Header-visual-soldiers {
-				position: absolute;
-			}
-			*/
+@media screen and (max-height: 720px), screen and (max-width: 632px) {
+  .Header-video {
+    display: none;
+  }
+}
+@media screen and (max-width: 632px) {
+  .Header-inner {
+    width: 100% !important;
+  }
+}
 .Presentation {
   background-color: #f2f2f2;
   background-color: #fff;
@@ -231,9 +201,24 @@ hr {
   position: relative;
 }
 .Presentation-visual-soldiers {
+  width: 370px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+@media screen and (max-width: 1040px) {
+  .Presentation-visual-soldiers {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 872px) {
+  .Presentation-grid {
+    grid-template-columns: 12fr;
+    grid-template-areas: "title" "text";
+  }
+  .Presentation-visual {
+    display: none;
+  }
 }
 .Action {
   background-color: #20283f;
@@ -271,6 +256,24 @@ hr {
 .Action-text-link--about {
   grid-area: about-link;
 }
+@media screen and (max-width: 872px) {
+  .Action {
+    padding: 120px 0 40px 0;
+  }
+  .Action-grid {
+    display: block;
+    align-content: center;
+  }
+  .Action-title {
+    margin-bottom: 40px;
+  }
+  .Action-text {
+    margin-bottom: 40px;
+  }
+  .Action-text-link--participate {
+    margin-bottom: 120px;
+  }
+}
 .Social {
   background-color: #20283f;
   padding: 40px 0 200px 0;
@@ -283,7 +286,7 @@ hr {
 }
 .Social-flex-item {
   display: block;
-  height: 240px;
+  height: 206px;
   background-color: #2b3349;
   text-decoration: none;
   text-align: center;
@@ -311,13 +314,37 @@ hr {
   transform: translate(-50%, -50%);
 }
 .Social-flex-item-text {
-  margin-top: -6px;
   color: #fff;
-  padding: 20px 20px;
+  padding: 40px 20px;
   text-decoration: none;
-  font-size: 80%;
-  line-height: 160%;
-  text-align: left;
+  line-height: 80%;
+}
+@media screen and (max-width: 872px) {
+  .Social {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  .Social-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    grid-template-rows: auto auto;
+    grid-template-areas: "social-teamspeak social-youtube" "social-steam social-units";
+  }
+  .Social-flex-item {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .Social-flex {
+    display: block;
+  }
+  .Social-flex > li {
+    margin-bottom: 40px;
+  }
+  .Social-flex > li:last-child {
+    margin-bottom: 0;
+  }
 }
 .Footer {
   background-color: #222;

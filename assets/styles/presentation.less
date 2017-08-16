@@ -5,7 +5,7 @@
 	.Presentation-grid {
 		display: grid;
 		grid-template-columns: 7fr 5fr;
-		grid-gap: unit(@gutter-width, px);
+		grid-gap: unit(@gutter, px);
 		grid-template-rows: auto auto;
 		grid-template-areas:
 			"title visual"
@@ -22,7 +22,26 @@
 			position: relative;
 		}
 			.Presentation-visual-soldiers {
+				width: unit(@w5, px);
 				position: absolute;
 				top: 50%;
 				transform: translateY(-50%);
 			}
+
+@media screen and (max-width: 1040px) {
+	.Presentation-visual-soldiers {
+		width: unit(@w5-r1, px);
+	}
+}
+
+@media screen and (max-width: 872px) {
+	.Presentation-grid {
+		grid-template-columns: 12fr;
+		grid-template-areas:
+			"title"
+			"text";
+	}
+	.Presentation-visual {
+		display: none;
+	}
+}

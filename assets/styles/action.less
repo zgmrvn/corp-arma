@@ -1,11 +1,11 @@
 .Action {
 	background-color: @theme-main-color;
-	padding: unit((@gutter-width * @block-padding-multiplier), px) 0 unit(@gutter-width, px) 0;
+	padding: unit((@gutter * @block-padding-multiplier), px) 0 unit(@gutter, px) 0;
 }
 	.Action-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: unit(@gutter-width, px);
+		grid-gap: unit(@gutter, px);
 		grid-template-rows: auto auto auto;
 		grid-template-areas:
 			"participate-title about-title"
@@ -20,7 +20,7 @@
 			justify-content: center;
 		}
 			.Action-title img {
-				margin-right: unit((@gutter-width / 4), px);
+				margin-right: unit((@gutter / 4), px);
 			}
 		.Action-text {
 			color: tint(@theme-main-color, 90%);
@@ -37,3 +37,22 @@
 		.Action-text-link--about {
 			grid-area: about-link;
 		}
+
+@media screen and (max-width: 872px) {
+	.Action {
+		padding: unit((@gutter * @block-padding-multiplier-r2), px) 0 unit(@gutter, px) 0;
+	}
+	.Action-grid {
+		display: block;
+		align-content: center;
+	}
+	.Action-title {
+		margin-bottom: unit(@gutter, px);
+	}
+	.Action-text {
+		margin-bottom: unit(@gutter, px);
+	}
+	.Action-text-link--participate {
+		margin-bottom: unit((@gutter * @block-padding-multiplier-r2), px);
+	}
+}
