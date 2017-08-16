@@ -1,0 +1,48 @@
+@import 'variables.less';
+
+p {
+	margin-bottom: unit(@gutter, px);
+	color: #555;
+}
+
+.Header--about {
+	height: 300px;
+	position: relative;
+}
+	.Header-title--about {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		line-height: 100%;
+	}
+.About {
+	background-color: #fff;
+}
+	.About-subtitle {
+		font-weight: bold;
+		font-size: 200%;
+		padding-top: unit(@gutter, px);
+		margin-bottom: unit(@gutter, px);
+	}
+	.About-subtitle:first-child {
+		padding-top: 0;
+	}
+.About ul {
+	margin-bottom: unit(@gutter, px);
+	padding: unit((@gutter / 2), px) unit(@gutter, px) unit((@gutter / 2 - @gutter / 3), px) unit(@gutter, px);
+	background-color: #f7f7f7;
+	box-sizing: border-box;
+	border-radius: unit(@border-radius, px);
+}.About ul:last-child {
+	margin-bottom: 0;
+}
+.About li {
+	color: #555;
+	font-size: 90%;
+	line-height: 160%;
+	margin-bottom: unit((@gutter / 3), px);
+}
+.About li a {
+	color: #555;
+}

@@ -10,6 +10,7 @@ h2 {
 body {
   background-color: #20283f;
   font-family: 'Open Sans', sans-serif;
+  text-align: justify;
 }
 p {
   line-height: 220%;
@@ -106,6 +107,9 @@ hr {
   }
   .w6 {
     width: 368px !important;
+  }
+  .w10 {
+    width: 100% !important;
   }
   .w12 {
     width: 776px !important;

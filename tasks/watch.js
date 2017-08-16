@@ -9,14 +9,8 @@ module.exports = function(){
 		})
 	})
 
-	gulp.watch('projects/*.json', function(event){
-		gulpSequence('ejs', 'preprocess')(function(err){
-			if (err) console.log(err)
-		})
-	})
-
 	gulp.watch('assets/styles/*.less', ['less'])
 	browserSync.watch('./dist/index.html').on('change', browserSync.reload)
-	browserSync.watch('./dist/projects/*.html').on('change', browserSync.reload)
-	browserSync.watch('./dist/src/styles/styles.css').on('change', browserSync.reload)
+	browserSync.watch('./dist/about/index.html').on('change', browserSync.reload)
+	browserSync.watch('./dist/src/styles/*.css').on('change', browserSync.reload)
 }
